@@ -11,7 +11,9 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
         <p><FaBook></FaBook></p>
+
           <Navbar.Brand > Digital Courses</Navbar.Brand>
+          
           
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
