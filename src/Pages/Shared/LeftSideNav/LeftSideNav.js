@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Courses from '../../Courses/Courses';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { Button } from 'react-bootstrap';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const LeftSideNav = () => {
     const [courses,setCourses] = useState([]);
@@ -10,7 +13,21 @@ const LeftSideNav = () => {
         fetch('http://localhost:5000/course-categories')
         .then( res => res.json())
         .then(data => setCourses(data));
-    }, [])
+    }, []);
+
+    const{providerLogin} = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+    
+    const  handleGoogleSignIn =()=>{
+        providerLogin(googleProvider)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+
+        })
+        .catch(error =>console.error(error))
+    }
 
 
    
@@ -27,8 +44,8 @@ const LeftSideNav = () => {
             </div>
             <div>
             <ListGroup >
-      <ListGroup.Item className='mb-2'> <FaGoogle></FaGoogle> Google Login</ListGroup.Item>
-      <ListGroup.Item> <FaGithub></FaGithub> Github Login</ListGroup.Item>
+      <Button onClick={handleGoogleSignIn} className='mb-2'> <FaGoogle></FaGoogle> Google Login</Button>
+      <Button> <FaGithub></FaGithub> Github Login</Button>
       
     </ListGroup>
             </div>

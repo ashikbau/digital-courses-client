@@ -10,7 +10,7 @@ const Course = ({course}) => {
       <Card.Header>{course.name}</Card.Header>
       <Card.Body>
         
-        <Card.Img variant="top" src={course.image} />
+        <Card.Img style={{ height: '350px' }} variant="top" src={course.image} />
         <Card.Text>
           <p>{course.description}</p>
         </Card.Text>

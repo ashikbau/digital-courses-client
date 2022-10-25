@@ -18,7 +18,7 @@ const CourseDetails = () => {
       <Card.Header>{name}</Card.Header>
       <Card.Body>
         <Card.Title></Card.Title>
-        <Card.Img variant="top" src={image} />
+        
         <Card.Text>
           {description}
         </Card.Text>
