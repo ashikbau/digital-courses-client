@@ -7,7 +7,7 @@ import {  Link, useLoaderData } from 'react-router-dom';
 
 
 const CourseDetails = () => {
-    const{name,description,rating,participant}=useLoaderData()
+    const{id,name,description,rating,participant}=useLoaderData()
     
     
 
@@ -17,13 +17,14 @@ const CourseDetails = () => {
         
         <Card className="text-center mb-3 ">
       <Card.Header>{name}</Card.Header>
+      <Link to={`/checkout/${id}`}><Button variant="primary">download pdf</Button></Link>
       <Card.Body>
         <Card.Title></Card.Title>
         
         <Card.Text>
           {description}
         </Card.Text>
-        <Link ><Button variant="primary">Get Premimum Access</Button></Link>
+        <Link to={`/checkout/${id}`}><Button variant="primary">Get Premimum Access</Button></Link>
         
       </Card.Body>
       <Card.Footer className="">

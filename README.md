@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Information About my project
+Name : Digital Courses
+Live Link :
+description projects:
+1.I tried to divide small parts of work and then implement.
+2.I used react router and firebase authentication for this projects
+3. I tried to use my understanding to execute.
+4. I used react bootsrap to desin the projects
+5. I also create fake data and own api to used for this projects
+
+List of technologies I used for this projects
+1. react bootstrap
+2. react router dom
+3. express.js
+4. fake data api
+5. firebase authentication
+

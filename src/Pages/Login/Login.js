@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
 const [error,setError] = useState('');
-  const {signIn} = useContext(AuthContext)
+  const {signIn,setLoading} = useContext(AuthContext)
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathName || '/courses'
@@ -28,6 +28,9 @@ const [error,setError] = useState('');
     .catch(error => {
       console.error(error)
       setError(error.message);
+    })
+    .finally(()=>{
+      setLoading(false)
     })
   }
 

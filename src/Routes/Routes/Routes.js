@@ -9,11 +9,14 @@ import Register from "../../Pages/Login/Register/Register";
 import TermsAndConditions from "../../Pages/Others/TermsAndConditions/TermsAndConditions";
 import CheckOutPage from "../../Pages/Shared/CheckOutPage/CheckOutPage";
 import CourseDetails from "../../Pages/Shared/CourseDetails/CourseDetails";
+import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
+import PrivateRoute from "../../Pages/Shared/PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
         path:'/',
         element: <Main></Main>,
+
         children:[
             {
                 path:'/',
@@ -57,11 +60,15 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/checkout/:id',
-                element : <CheckOutPage></CheckOutPage>
+                element : <PrivateRoute><CheckOutPage></CheckOutPage></PrivateRoute>
             },
             {
                 path:'/terms',
                 element: <TermsAndConditions></TermsAndConditions>
+            },
+            {
+                path:'*',
+                element: <ErrorPage></ErrorPage>
             }
         ]
     }
