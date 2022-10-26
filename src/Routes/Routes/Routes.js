@@ -6,6 +6,7 @@ import FQA from "../../Pages/FQA/FQA";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import TermsAndConditions from "../../Pages/Others/TermsAndConditions/TermsAndConditions";
 import CheckOutPage from "../../Pages/Shared/CheckOutPage/CheckOutPage";
 import CourseDetails from "../../Pages/Shared/CourseDetails/CourseDetails";
 
@@ -57,6 +58,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/checkout/:id',
                 element : <CheckOutPage></CheckOutPage>
+            },
+            {
+                path:'/terms',
+                element: <TermsAndConditions></TermsAndConditions>
             }
         ]
     }
