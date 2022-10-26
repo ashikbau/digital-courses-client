@@ -70,10 +70,7 @@ const Header = () => {
               }
 
             </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-      <div>
+            <div>
       <div className={darkMode ? "dark-mode" : "light-mode"}>
       <div className="container">
         <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
@@ -90,6 +87,12 @@ const Header = () => {
       </div>
     </div>
       </div>
+
+          </Nav>
+        </Navbar.Collapse>
+       
+      </Container>
+      
     </Navbar>
   );
 };
