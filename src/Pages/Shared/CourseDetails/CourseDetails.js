@@ -1,12 +1,13 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 
 import Card from 'react-bootstrap/Card';
-import {  useLoaderData } from 'react-router-dom';
+import {  Link, useLoaderData } from 'react-router-dom';
 
 
 const CourseDetails = () => {
-    const{name,image,description,rating,participant}=useLoaderData()
+    const{name,description,rating,participant}=useLoaderData()
     
     
 
@@ -22,6 +23,7 @@ const CourseDetails = () => {
         <Card.Text>
           {description}
         </Card.Text>
+        <Link ><Button variant="primary">Get Premimum Access</Button></Link>
         
       </Card.Body>
       <Card.Footer className="">

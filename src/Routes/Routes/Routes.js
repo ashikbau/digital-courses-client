@@ -6,6 +6,7 @@ import FQA from "../../Pages/FQA/FQA";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import CheckOutPage from "../../Pages/Shared/CheckOutPage/CheckOutPage";
 import CourseDetails from "../../Pages/Shared/CourseDetails/CourseDetails";
 
 export const routes = createBrowserRouter([
@@ -52,6 +53,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/register',
                 element: <Register></Register>
+            },
+            {
+                path:'/checkout/:id',
+                element : <CheckOutPage></CheckOutPage>
             }
         ]
     }

@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Course = ({course}) => {
+  console.log(course);
     return (
         
             <Card className="text-center mb-4">
@@ -14,7 +15,7 @@ const Course = ({course}) => {
         <Card.Text>
           <p>{course.description}</p>
         </Card.Text>
-        <Link to={`/courses/${course.id}`}><Button variant="primary">course Detail</Button></Link>
+        <Link to={`/courses/${course.id}`}><Button variant="primary">Course Detail</Button></Link>
       </Card.Body>
       <Card.Footer>
       <div className='d-flex justify-content-between
