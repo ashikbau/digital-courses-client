@@ -49,7 +49,7 @@ let style= darkMode? {
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto mx-2">
+          < Nav className="me-auto mx-2">
 
             <Link className='mx-2' to='/home'>Home</Link>
             <Link className='mx-2' to='/faq'>FAQ</Link>
@@ -69,7 +69,7 @@ let style= darkMode? {
                   </>
                   :
                   <>
-                    <Link to='/login'>Login</Link>
+                    <Link className='mx-2' to='/login'>Login</Link>
                     <Link to='/register'>Register</Link>
                   </>
               }
