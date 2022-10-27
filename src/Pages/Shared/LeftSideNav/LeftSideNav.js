@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const LeftSideNav = () => {
     const [courses,setCourses] = useState([]);
@@ -15,9 +15,10 @@ const LeftSideNav = () => {
         .then(data => setCourses(data));
     }, []);
 
-    const{providerLogin} = useContext(AuthContext);
+    const{providerLogin,githubProviderLogIn} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     
     const  handleGoogleSignIn =()=>{
         providerLogin(googleProvider)
@@ -25,6 +26,15 @@ const LeftSideNav = () => {
             const user = result.user;
             console.log(user);
 
+        })
+        .catch(error =>console.error(error))
+    }
+
+    const handleGithubSignIn = ()=>{
+        githubProviderLogIn(githubProvider)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
         })
         .catch(error =>console.error(error))
     }
@@ -45,7 +55,7 @@ const LeftSideNav = () => {
             <div>
             <ListGroup >
       <Button onClick={handleGoogleSignIn} className='mb-2'> <FaGoogle></FaGoogle> Google Login</Button>
-      <Button> <FaGithub></FaGithub> Github Login</Button>
+      <Button onClick={handleGithubSignIn}> <FaGithub></FaGithub> Github Login</Button>
       
     </ListGroup>
             </div>
