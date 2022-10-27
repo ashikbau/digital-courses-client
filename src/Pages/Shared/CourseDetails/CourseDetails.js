@@ -30,7 +30,7 @@ const CourseDetails = () => {
         
         <Card className="text-center mb-3 ">
       <Card.Header>{name}</Card.Header>
-      <Link  to={`/checkout/${id}`}><Button variant="primary">download pdf</Button></Link>
+      {/* <Link  to={`/checkout/${id}`}><Button variant="primary">download pdf</Button></Link> */}
       
       <Card.Body>
         <Card.Title></Card.Title>
