@@ -20,10 +20,27 @@ const Header = () => {
         .catch(error => console.error(error))
 }
 
+const handleModeChange=()=>{
+   
+ setDarkMode(!darkMode)
+
+}
+
+let style= darkMode? {
+  backgroundColor: 'gray',
+ 
+}:{
+  backgroundColor: 'white',
+ 
+}
+
+
+
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" >
+      <Container  style={style} >
+        <button onClick={handleModeChange}>{darkMode?'Dark':'Light'}</button>
         <p><FaBook></FaBook></p>
 
         <Navbar.Brand > Digital Courses</Navbar.Brand>
@@ -70,28 +87,13 @@ const Header = () => {
               }
 
             </Nav.Link>
-            <div>
-      <div className={darkMode ? "dark-mode" : "light-mode"}>
-      <div className="container">
-        <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
-        <div className="switch-checkbox">
-          <label className="switch">
-            <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
-            <span className="slider round"> </span>
-          </label>
-        </div>
-        <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>☽</span>
-      </div>
-      <div>
-        <h1>Cool its {darkMode ? "Dark" : "Light"} Mode </h1>
-      </div>
-    </div>
-      </div>
+        
 
           </Nav>
         </Navbar.Collapse>
        
       </Container>
+      
       
     </Navbar>
   );
